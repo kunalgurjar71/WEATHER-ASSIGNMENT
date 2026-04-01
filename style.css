@@ -231,11 +231,11 @@ body {
 }
 
 .current-card.is-day {
-  background-image: url("day.svg");
+  background-image: url("day.jpeg");
 }
 
 .current-card.is-night {
-  background-image: url("night.svg");
+  background-image: url("night.jpg");
 }
 
 .current-left h2 {

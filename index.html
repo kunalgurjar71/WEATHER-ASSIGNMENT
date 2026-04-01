@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="welcomeScreen">
+      <div class="welcome-icon">⛅</div>
+      <h1>Welcome to WeatherApp</h1>
+      <p>Get real-time weather updates for any city in the world.</p>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter city name… e.g. Delhi"
+          autocomplete="off"
+        />
+        <button onclick="startSearch()">Get Weather</button>
+      </div>
+
+      <div id="welcomeError"></div>
+    </div>
+
+    <div id="loaderScreen">
+      <div class="spinner"></div>
+      <p id="loaderText">Searching for city…</p>
+    </div>
+
+    <div id="dashboard">
+      <div class="app-wrapper">
+        <div class="main-col">
+          <div class="top-search" onclick="resetApp()">
+            <span>🔍</span>
+            <span id="topSearchText">Search for cities</span>
+            <button
+              onclick="
+                event.stopPropagation();
+                resetApp();
+              "
+            >
+              New Search
+            </button>
+          </div>
+
+          <div class="current-card">
+            <div class="current-left">
+              <h2 id="db-city">—</h2>
+              <div class="rain-chance" id="db-rain">Chance of rain: —</div>
+              <div class="big-temp" id="db-temp">—°</div>
+              <div class="weather-desc" id="db-desc">—</div>
+            </div>
+            <div class="current-right">
+              <div class="day-night-badge" id="db-daynite">—</div>
+            </div>
+          </div>
+
+          <div class="hourly-card">
+            <div class="section-title">Today's Forecast</div>
+            <div class="hourly-row" id="hourlyRow"></div>
+          </div>
+
+          <div class="conditions-card">
+            <div class="conditions-header">
+              <div class="section-title" style="margin-bottom: 0">
+                Air Conditions
+              </div>
+            </div>
+            <div class="conditions-grid">
+              <div class="condition-item">
+                <div class="cond-label"><span>🌡️</span> Real Feel</div>
+                <div class="cond-val" id="db-feel">—</div>
+              </div>
+              <div class="condition-item">
+                <div class="cond-label"><span>💨</span> Wind</div>
+                <div class="cond-val" id="db-wind">—</div>
+              </div>
+              <div class="condition-item">
+                <div class="cond-label"><span>💧</span> Humidity</div>
+                <div class="cond-val" id="db-humidity">—</div>
+              </div>
+              <div class="condition-item">
+                <div class="cond-label"><span>🔆</span> UV Index</div>
+                <div class="cond-val" id="db-uv">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-panel">
+          <div class="section-title">7-Day Forecast</div>
+          <div class="forecast-list" id="forecastList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const endpoint = "https://dataservice.accuweather.com";
-const API_KEY = "apikey";
+const API_KEY = "zpka_39889c2841f647fca7efc46e7685966a_298e4ac3"
 
 window.onload = () => {
   document.getElementById("cityInput").addEventListener("keydown", (e) => {
